@@ -1,8 +1,8 @@
+import React from 'react';
 import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 import Hero from '../components/home/Hero';
 import Schedule from '../components/home/Schedule';
-// Importação do logo para o rodapé
-import logo from '../assets/gojuryu.png';
 
 const HomePage = () => {
   return (
@@ -10,17 +10,18 @@ const HomePage = () => {
       <Header />
       <Hero />
       
-      <main className="container mx-auto px-6 md:px-12 py-16 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <main className="container mx-auto px-6 md:px-12 py-12 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Seção de Introdução */}
         <section className="lg:col-span-5 space-y-8 md:space-y-12">
-          <div className="relative mt-8 md:mt-0">
-            {/* Texto de fundo responsivo para não vazar a tela */}
-            <span className="absolute -top-8 -left-4 md:-top-12 md:-left-8 text-6xl md:text-[120px] font-black text-white/5 italic pointer-events-none select-none uppercase leading-none text-nowrap">Goju-Ryu</span>
+          <div className="relative mt-4 md:mt-0">
+            {/* Texto de fundo controlado para não estourar no mobile */}
+            <span className="absolute -top-6 -left-2 md:-top-12 md:-left-8 text-5xl md:text-[120px] font-black text-white/5 italic pointer-events-none select-none uppercase leading-none text-nowrap z-0">Goju-Ryu</span>
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white leading-none relative z-10">
               FORÇA E <br /> <span className="text-[#B22222]">SUAVIDADE</span>
             </h2>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6 relative z-10">
             <p className="text-sm md:text-base leading-relaxed text-gray-400 font-light border-l border-[#B22222] pl-6">
               O Karatê Goju-Ryu de Contato expressa a eficiência de uma luta real. 
               O termo <strong>"GO"</strong> traduz-se como força, enquanto <strong>"JU"</strong> representa a flexibilidade ou suavidade. 
@@ -31,27 +32,29 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 bg-white/5 p-8 border-t border-b border-white/5 relative overflow-hidden">
-            <div className="space-y-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-white/5 p-6 md:p-8 border-t border-b border-white/5 relative overflow-hidden">
+            <div className="space-y-1 md:space-y-2 relative z-10">
               <div className="text-2xl md:text-3xl font-black text-[#B22222]">FBKGC</div>
               <div className="text-[10px] uppercase tracking-widest font-bold text-gray-500">Unidade Filiada</div>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1 md:space-y-2 relative z-10">
               <div className="text-2xl md:text-3xl font-black text-[#B22222]">MAURITI</div>
               <div className="text-[10px] uppercase tracking-widest font-bold text-gray-500">Ceará - Brasil</div>
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl md:text-8xl opacity-[0.02] font-black italic pointer-events-none">OSS</div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl md:text-8xl opacity-[0.02] font-black italic pointer-events-none">OSS</div>
           </div>
         </section>
 
+        {/* Seção de Horários */}
         <div className="lg:col-span-7 w-full">
           <Schedule />
         </div>
       </main>
 
-      <section className="bg-black py-16 md:py-32 relative overflow-hidden">
+      {/* Seção de Conceitos */}
+      <section className="bg-black py-12 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16 gap-6">
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white leading-none">
               CONCEITOS DA <br /> <span className="text-[#B22222]">FEDERAÇÃO</span>
             </h2>
@@ -88,34 +91,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <footer className="bg-black border-t border-white/5 pt-12 md:pt-20 pb-10">
-        <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 md:mb-20">
-          <div className="col-span-1 md:col-span-2 space-y-6">
-            <img 
-              src={logo} 
-              alt="Logo Mauriti" 
-              className="h-10 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
-            />
-            <p className="text-sm text-gray-500 max-w-sm font-light leading-relaxed">
-              Academia filiada à Federação Brasileira de Karatê Goju-Ryu de Contato.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <h4 className="text-[10px] uppercase tracking-widest font-black text-[#B22222]">Endereço</h4>
-            <p className="text-sm text-gray-400 font-light">Mauriti, Ceará<br />Unidade Operacional</p>
-          </div>
-          <div className="space-y-4">
-            <h4 className="text-[10px] uppercase tracking-widest font-black text-[#B22222]">Oficial</h4>
-            <div className="flex flex-col gap-2 italic">
-              <a href="https://gojuryudecontato.com" target="_blank" rel="noopener noreferrer" className="text-[10px] text-gray-600 hover:text-[#B22222]">Site da Federação</a>
-            </div>
-          </div>
-        </div>
-        <div className="container mx-auto px-6 md:px-12 border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-          <p className="text-[8px] uppercase tracking-widest text-gray-600">© 2025 Academia de Karatê em Mauriti. Filiada à FBKGC.</p>
-          <p className="text-[8px] uppercase tracking-widest text-gray-600">Oss! Respeito e Hierarquia</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
