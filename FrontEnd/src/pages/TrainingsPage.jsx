@@ -2,14 +2,20 @@ import React from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Button from '../components/ui/Button';
+import vidiopequenos from '../assets/pequenosluta.mp4';
+
 
 const TrainingsPage = () => {
+  // Configurações do WhatsApp
+  const whatsappNumber = "5588996797494";
+  const baseUrl = `https://wa.me/${whatsappNumber}?text=`;
+
   return (
     <div className="bg-[#1a1a1a] min-h-screen font-sans text-gray-200 selection:bg-[#B22222] selection:text-white overflow-x-hidden">
       <Header />
       
       <main className="pt-24 md:pt-32">
-        {/* --- Cabeçalho da Página (Padrão do Projeto) --- */}
+        {/* --- Cabeçalho da Página --- */}
         <div className="container mx-auto px-6 md:px-12 mb-16 md:mb-24">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
                 <div>
@@ -26,14 +32,13 @@ const TrainingsPage = () => {
             </div>
         </div>
 
-        {/* --- Seção 1: Programas de Treinamento (Cards Grandes) --- */}
+        {/* --- Seção 1: Programas de Treinamento --- */}
         <section className="container mx-auto px-6 md:px-12 mb-20 md:mb-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
                 {/* Card Adultos */}
                 <div className="group relative h-[400px] md:h-[500px] border border-white/10 overflow-hidden bg-black">
-                    <img 
-                        src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1000" 
+                    <img src="https://i.ibb.co/Hv3SFFt/turmatoda.jpg"
                         alt="Treino Adultos" 
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
                     />
@@ -57,9 +62,12 @@ const TrainingsPage = () => {
 
                 {/* Card Kids */}
                 <div className="group relative h-[400px] md:h-[500px] border border-white/10 overflow-hidden bg-black">
-                    <img 
-                        src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=1000" 
-                        alt="Treino Kids" 
+                    <video 
+                        src={vidiopequenos} 
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
@@ -83,7 +91,7 @@ const TrainingsPage = () => {
             </div>
         </section>
 
-        {/* --- Seção 2: Estrutura da Aula (Grid Informativo) --- */}
+        {/* --- Seção 2: Estrutura da Aula --- */}
         <section className="w-full bg-white/5 border-y border-white/5 py-16 md:py-24 mb-20 md:mb-32">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="mb-12 text-center md:text-left">
@@ -94,7 +102,6 @@ const TrainingsPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Passo 1 */}
                     <div className="group">
                         <div className="text-5xl font-black text-white/10 mb-4 group-hover:text-[#B22222]/20 transition-colors">01</div>
                         <h4 className="text-white font-bold uppercase text-sm mb-2 tracking-widest">Junbi Undo</h4>
@@ -103,7 +110,6 @@ const TrainingsPage = () => {
                         </p>
                     </div>
 
-                    {/* Passo 2 */}
                     <div className="group">
                         <div className="text-5xl font-black text-white/10 mb-4 group-hover:text-[#B22222]/20 transition-colors">02</div>
                         <h4 className="text-white font-bold uppercase text-sm mb-2 tracking-widest">Kihon</h4>
@@ -112,7 +118,6 @@ const TrainingsPage = () => {
                         </p>
                     </div>
 
-                    {/* Passo 3 */}
                     <div className="group">
                         <div className="text-5xl font-black text-white/10 mb-4 group-hover:text-[#B22222]/20 transition-colors">03</div>
                         <h4 className="text-white font-bold uppercase text-sm mb-2 tracking-widest">Kata</h4>
@@ -121,7 +126,6 @@ const TrainingsPage = () => {
                         </p>
                     </div>
 
-                    {/* Passo 4 */}
                     <div className="group">
                         <div className="text-5xl font-black text-white/10 mb-4 group-hover:text-[#B22222]/20 transition-colors">04</div>
                         <h4 className="text-white font-bold uppercase text-sm mb-2 tracking-widest">Kumite</h4>
@@ -133,13 +137,12 @@ const TrainingsPage = () => {
             </div>
         </section>
 
-        {/* --- Seção 3: Diferenciais (Lista Vertical) --- */}
+        {/* --- Seção 3: Diferenciais --- */}
         <section className="container mx-auto px-6 md:px-12 mb-20 md:mb-32">
              <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div className="md:col-span-5 relative h-[300px] md:h-[400px]">
                     <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[#B22222]"></div>
-                    <img 
-                         src="https://images.unsplash.com/photo-1544367563-12123d8366e3?auto=format&fit=crop&q=80&w=800"
+                    <img src="https://i.ibb.co/mVnb9y8j/imgemotion.jpg"
                          alt="Foco"
                          className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
                     />
@@ -179,7 +182,7 @@ const TrainingsPage = () => {
              </div>
         </section>
 
-        {/* --- Seção Final: Call to Action (Padrão Home/Academy) --- */}
+        {/* --- Seção Final: Call to Action --- */}
         <section className="container mx-auto px-6 md:px-12 mb-16">
             <div className="relative border border-white/5 p-10 md:p-16 text-center bg-gradient-to-b from-[#1a1a1a] to-black overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
@@ -190,7 +193,14 @@ const TrainingsPage = () => {
                     Supere seus <span className="text-[#B22222]">Limites</span>
                 </h2>
                 <div className="flex justify-center relative z-10">
-                    <Button variant="primary">Agendar Aula Experimental</Button>
+                    {/* BOTÃO ALTERADO PARA WHATSAPP */}
+                    <a 
+                      href={`${baseUrl}${encodeURIComponent("Olá! Vi a estrutura de treinos no site e gostaria de saber mais sobre a Turma Adulta e Turma Kids para agendar uma aula experimental.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                        <Button variant="primary">Agendar Aula Experimental</Button>
+                    </a>
                 </div>
             </div>
         </section>

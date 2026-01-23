@@ -3,13 +3,18 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Button from '../components/ui/Button';
 
+
 const AcademyPage = () => {
+  // Configurações do WhatsApp
+  const whatsappNumber = "5588996797494";
+  const baseUrl = `https://wa.me/${whatsappNumber}?text=`;
+
   return (
     <div className="bg-[#1a1a1a] min-h-screen font-sans text-gray-200 selection:bg-[#B22222] selection:text-white overflow-x-hidden">
       <Header />
       
       <main className="pt-24 md:pt-32">
-        {/* --- Cabeçalho da Página (Padrão GalleryPage) --- */}
+        {/* --- Cabeçalho da Página --- */}
         <div className="container mx-auto px-6 md:px-12 mb-16 md:mb-24">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
                 <div>
@@ -26,7 +31,7 @@ const AcademyPage = () => {
             </div>
         </div>
 
-        {/* --- Seção 1: História e Propósito (Layout Misto) --- */}
+        {/* --- Seção 1: História e Propósito --- */}
         <section className="container mx-auto px-6 md:px-12 mb-20 md:mb-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 
@@ -44,17 +49,22 @@ const AcademyPage = () => {
                         </p>
                     </div>
                     <div className="pt-4 pl-6">
-                        <Button variant="primary">Agendar Visita</Button>
+                        {/* BOTÃO 1: Agendar Visita */}
+                        <a 
+                          href={`${baseUrl}${encodeURIComponent("Olá! Gostaria de agendar uma visita para conhecer o Dojo pessoalmente.")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant="primary">Agendar Visita</Button>
+                        </a>
                     </div>
                 </div>
 
-                {/* Imagem com Elementos Visuais (Padrão Hero) */}
+                {/* Imagem com Elementos Visuais */}
                 <div className="relative group order-1 lg:order-2 h-[400px] md:h-[500px] w-full">
-                    {/* Elementos Decorativos de Fundo */}
                     <div className="absolute top-0 right-0 w-2/3 h-2/3 border border-white/5 z-0"></div>
                     <div className="absolute bottom-0 left-0 w-2/3 h-2/3 bg-[#B22222]/5 z-0"></div>
                     
-                    {/* Imagem Principal */}
                     <div className="absolute inset-4 overflow-hidden border border-white/10 bg-black z-10">
                         <img 
                             src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=1000" 
@@ -63,7 +73,6 @@ const AcademyPage = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
                         
-                        {/* Selo Flutuante */}
                         <div className="absolute bottom-6 right-6 bg-[#B22222] p-4 text-center shadow-lg shadow-[#B22222]/20">
                             <span className="block text-2xl font-black text-white leading-none">GO</span>
                             <span className="block text-2xl font-black text-white/70 leading-none">JU</span>
@@ -73,7 +82,7 @@ const AcademyPage = () => {
             </div>
         </section>
 
-        {/* --- Seção 2: O Sensei (Background Dark) --- */}
+        {/* --- Seção 2: O Sensei --- */}
         <section className="w-full bg-black border-y border-white/5 py-16 md:py-24 mb-20 md:mb-32 relative overflow-hidden">
             <div className="absolute top-0 left-0 text-[100px] md:text-[200px] font-black text-white/[0.02] italic pointer-events-none select-none uppercase leading-none z-0 whitespace-nowrap">
                 Sensei
@@ -84,8 +93,7 @@ const AcademyPage = () => {
                     <div className="w-full md:w-1/3 aspect-[3/4] relative border border-white/10 p-2">
                         <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#B22222]"></div>
                         <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#B22222]"></div>
-                        <img 
-                            src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?auto=format&fit=crop&q=80&w=800" 
+                        <img src="https://i.ibb.co/VpCvG1FM/lideranca.jpg"
                             alt="Sensei" 
                             className="w-full h-full object-cover grayscale contrast-125"
                         />
@@ -117,7 +125,7 @@ const AcademyPage = () => {
             </div>
         </section>
 
-        {/* --- Seção 3: Infraestrutura/Valores (Grid Padrão GalleryPage) --- */}
+        {/* --- Seção 3: Infraestrutura/Valores --- */}
         <section className="container mx-auto px-6 md:px-12 mb-20 md:mb-32">
             <div className="flex flex-col md:flex-row items-baseline gap-4 mb-12">
                 <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-white">
@@ -128,7 +136,6 @@ const AcademyPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Item 1 */}
                 <div className="group bg-white/5 p-8 border border-white/5 hover:border-[#B22222]/30 transition-all duration-500">
                     <div className="w-10 h-10 mb-6 flex items-center justify-center bg-[#B22222]/10 rounded-sm">
                         <div className="w-1 h-4 bg-[#B22222]"></div>
@@ -139,7 +146,6 @@ const AcademyPage = () => {
                     </p>
                 </div>
 
-                {/* Item 2 */}
                 <div className="group bg-white/5 p-8 border border-white/5 hover:border-[#B22222]/30 transition-all duration-500">
                      <div className="w-10 h-10 mb-6 flex items-center justify-center bg-[#B22222]/10 rounded-sm">
                         <div className="w-1 h-4 bg-[#B22222]"></div>
@@ -150,7 +156,6 @@ const AcademyPage = () => {
                     </p>
                 </div>
 
-                {/* Item 3 */}
                 <div className="group bg-white/5 p-8 border border-white/5 hover:border-[#B22222]/30 transition-all duration-500">
                      <div className="w-10 h-10 mb-6 flex items-center justify-center bg-[#B22222]/10 rounded-sm">
                         <div className="w-1 h-4 bg-[#B22222]"></div>
@@ -163,7 +168,7 @@ const AcademyPage = () => {
             </div>
         </section>
 
-        {/* --- Seção Final: Call to Action (Estilo Footer Home) --- */}
+        {/* --- Seção Final: Call to Action --- */}
         <section className="container mx-auto px-6 md:px-12 mb-16">
              <div className="relative border border-white/5 p-10 md:p-16 text-center overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-black">
                 <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-[#B22222] opacity-50"></div>
@@ -176,7 +181,14 @@ const AcademyPage = () => {
                     Não é necessário experiência prévia. Apenas a vontade de evoluir.
                 </p>
                 <div className="flex justify-center">
-                    <Button variant="primary">Matricule-se Agora</Button>
+                    {/* BOTÃO 2: Matricule-se Agora */}
+                    <a 
+                      href={`${baseUrl}${encodeURIComponent("Olá! Vi as informações sobre a academia no site e quero saber mais sobre como fazer minha matrícula.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="primary">Matricule-se Agora</Button>
+                    </a>
                 </div>
              </div>
         </section>

@@ -49,7 +49,16 @@ const Schedule = () => {
       </div>
       
       <div className="mt-6 md:mt-10">
-        <Button className="w-full">Secure Your Spot</Button>
+        <a 
+          href={`https://wa.me/5588996797494?text=${encodeURIComponent("Olá! Vi o site da academia e gostaria de agendar uma aula experimental.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full block"
+        >
+          <Button className="w-full cursor-pointer">
+            Agende Sua Aula Experimental
+          </Button>
+        </a>
       </div>
     </div>
   );

@@ -3,9 +3,14 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import GallerySlider from '../components/gallery/GallerySlider';
 import videoKarate from '../assets/vidiokarate.mp4';
-import exameKarate from '../assets/examekarate.jpg'; // Nova importação da imagem
+;
 
 const GalleryPage = () => {
+  // Configuração do WhatsApp
+  const whatsappNumber = "5588996797494";
+  const message = encodeURIComponent("Olá! Vi a galeria de fotos da academia e fiquei interessado em conhecer o treino. Como faço para agendar uma aula?");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
   return (
     <div className="bg-[#1a1a1a] min-h-screen font-sans text-gray-200 selection:bg-[#B22222] selection:text-white overflow-x-hidden">
       <Header />
@@ -72,9 +77,8 @@ const GalleryPage = () => {
         <section className="w-full bg-white/5 border-y border-white/5 py-12 md:py-32 mb-16 md:mb-24">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-                    {/* Card Grande - ALTERADO AQUI (IMAGEM EXAME) */}
                     <div className="lg:col-span-8 relative h-[300px] md:h-[500px] group overflow-hidden bg-black border border-white/10">
-                        <img src={exameKarate} alt="Exames" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
+                        <img src="https://i.ibb.co/7JYpW3wG/examekarate.jpg" alt="Exames" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                         <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full">
                             <div className="w-12 h-1 bg-[#B22222] mb-4 group-hover:w-24 transition-all duration-500"></div>
@@ -82,7 +86,6 @@ const GalleryPage = () => {
                             <p className="text-xs md:text-sm text-gray-400 max-w-lg hidden md:block transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">O momento de provação.</p>
                         </div>
                     </div>
-                    {/* Card Vertical - ALTERADO ANTERIORMENTE (VÍDEO) */}
                     <div className="lg:col-span-4 relative h-[300px] md:h-[500px] group overflow-hidden bg-black border border-white/10">
                         <video 
                             src={videoKarate} 
@@ -98,22 +101,20 @@ const GalleryPage = () => {
                             <h3 className="text-xl md:text-2xl font-black uppercase italic text-white">Competições</h3>
                         </div>
                     </div>
-                    {/* Card Horizontal 1 */}
                     <div className="lg:col-span-5 relative h-[250px] md:h-[300px] group overflow-hidden bg-black border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&q=80&w=800" alt="Seminários" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
+                        <img src="https://i.ibb.co/wNLFLGP8/seminarios.png" alt="Seminários" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                         <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
                             <h3 className="text-lg md:text-xl font-black uppercase tracking-widest text-white mb-1">Seminários</h3>
                             <span className="text-[10px] text-[#B22222] font-bold uppercase tracking-widest">Aprimoramento Técnico</span>
                         </div>
                     </div>
-                    {/* Card Horizontal 2 */}
                     <div className="lg:col-span-7 relative h-[250px] md:h-[300px] group overflow-hidden bg-black border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1544367563-12123d8366e3?auto=format&fit=crop&q=80&w=1200" alt="Cultura" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
+                        <img src="https://i.ibb.co/fYRVyrp1/esperanca.png" alt="Cultura" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"/>
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                         <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full flex flex-col justify-end items-start">
-                             <h3 className="text-lg md:text-xl font-black uppercase tracking-widest text-white mb-1">Cultura & Respeito</h3>
-                             <p className="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">A hierarquia e a etiqueta do dojo</p>
+                             <h3 className="text-lg md:text-xl font-black uppercase tracking-widest text-white mb-1">Humildade & Esperança</h3>
+                             <p className="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Cultivando o hoje, acreditando no amanhã.</p>
                         </div>
                     </div>
                 </div>
@@ -133,6 +134,18 @@ const GalleryPage = () => {
                      <div className="w-1 bg-[#B22222] h-12 mx-auto"></div>
                 </div>
              </div>
+        </section>
+
+        {/* --- NOVO BOTÃO DE AGENDAMENTO --- */}
+        <section className="container mx-auto px-6 md:px-12 mb-24 text-center">
+            <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-5 bg-[#B22222] text-white text-xs font-bold uppercase tracking-[0.3em] hover:bg-red-700 transition-all shadow-xl shadow-red-900/20"
+            >
+              Agendar Aula Experimental
+            </a>
         </section>
 
       </main>
