@@ -4,7 +4,7 @@ const Schedule = () => {
   const headers = ["Categoria", "Terça", "Quinta", "Sábado", "Domingo"];
   
   const rows = [
-    ["Adultos", "20:00", "20:00", "17:00", "10:00"],
+    ["Adultos", "19:30", "19:30", "17:00", "10:00"],
     ["Crianças", "—", "—", "16:00", "09:00"]
   ];
 
