@@ -66,8 +66,7 @@ const AcademyPage = () => {
                     <div className="absolute bottom-0 left-0 w-2/3 h-2/3 bg-[#B22222]/5 z-0"></div>
                     
                     <div className="absolute inset-4 overflow-hidden border border-white/10 bg-black z-10">
-                        <img 
-                            src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=1000" 
+                        <img src="https://i.ibb.co/SwbSrzg5/IMG-20260124-WA0022.jpg" 
                             alt="Interior do Dojo" 
                             className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
                         />

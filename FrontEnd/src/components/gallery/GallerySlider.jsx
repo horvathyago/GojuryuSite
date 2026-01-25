@@ -17,7 +17,7 @@ const GALLERY_IMAGES = [
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1544367563-12123d8366e3?auto=format&fit=crop&q=80&w=1200",
+    url: "https://i.ibb.co/BHBzntP3/IMG-20260124-WA0025.jpg",
     title: "Dojo Spirit",
     type: "image"
   },
